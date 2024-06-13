@@ -65,19 +65,4 @@ public class AuthorService {
 }
 
 
-//    public void searchAuthorInRepository() {
-//        System.out.println("Digite o nome do autor:");
-//        String partOfAuthorName = scanner.nextLine();
-//        List<Author> authors = authorRepository.authorByParteOfTheName(partOfAuthorName);
-//
-//        if (authors.isEmpty()) {
-//            System.out.println("\nAutor não encontrado");
-//        } else {
-//            authors.forEach(a ->
-//                    System.out.printf("\nAutor encontrado: %s\n",
-//                            a.getName()));
-//        }
-//    }
-
-
 

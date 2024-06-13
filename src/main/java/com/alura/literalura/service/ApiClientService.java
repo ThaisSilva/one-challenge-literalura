@@ -100,25 +100,3 @@ public class ApiClientService {
 //        }
 //
 //    }
-
-//    public Optional<Author> fetchAuthorByName(String name) {
-//        String url = URL + "?author=" + name;
-//        String result = restClient.get()
-//                .uri(url)
-//                .retrieve()
-//                .body(String.class);
-
-//        try {
-//            JsonNode root = objectMapper.readTree(result);
-//            JsonNode bookNode = root.path("results").get(0);
-//
-//            JsonNode authorNode = bookNode.path("authors").get(0);
-//            Author author = objectMapper.treeToValue(authorNode, Author.class);
-//
-//            return Optional.of(author);
-//
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
-//}

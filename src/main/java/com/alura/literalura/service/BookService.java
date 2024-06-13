@@ -89,16 +89,4 @@ public class BookService {
 }
 
 
-    //    public void searchBook() {
-//        System.out.println("Digite o título do livro:");
-//        var bookTitle = scanner.nextLine();
-//        searchedBook = bookRepository.findByTitleContainingIgnoreCase(bookTitle);
-//
-//        if (searchedBook.isPresent()) {
-//            System.out.println("Dados do livro:" + searchedBook.get());
-//        } else {
-//            System.out.println("Livro não encontrado");
-//        }
-//    }
-
 
