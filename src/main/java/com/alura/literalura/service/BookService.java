@@ -1,6 +1,7 @@
 package com.alura.literalura.service;
 
 import com.alura.literalura.model.Book;
+import com.alura.literalura.model.BookData;
 import com.alura.literalura.model.Languages;
 import com.alura.literalura.repository.BookRepository;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -80,11 +81,8 @@ public class BookService {
                 System.out.println("Título: " + b.getTitle() + "\n Autor: " + b.getAuthor() + "\nIdioma: " + b.getLanguage() + "Número de downloads: " + b.getDownloads()));
     }
 
-    public void listSearchedBooks() {
-        List<Book> booksList = bookRepository.findAll();
-        booksList.stream()
-                .sorted(Comparator.comparing(Book::getTitle))
-                .forEach(System.out::println);
+    public List<BookData> listSearchedBooks() {
+        return bookRepository.findAll().stream().map(BookData::new).toList();
     }
 }
 

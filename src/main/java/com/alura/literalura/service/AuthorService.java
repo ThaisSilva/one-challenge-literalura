@@ -1,6 +1,7 @@
 package com.alura.literalura.service;
 
 import com.alura.literalura.model.Author;
+import com.alura.literalura.model.AuthorData;
 import com.alura.literalura.repository.AuthorRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,7 +25,6 @@ public class AuthorService {
     private final HttpClient httpClient = HttpClient.newHttpClient();
     private final ObjectMapper objectMapper = new ObjectMapper();
     Scanner scanner = new Scanner(System.in);
-    //List<Author> searchedAuthors = new ArrayList<>();
 
     public Optional<Author> fetchAuthorByName(String author) {
         String url = BASE_URL + author.replace(" ", "+");
@@ -38,6 +38,7 @@ public class AuthorService {
                 JsonNode root = objectMapper.readTree(response.body());
                 JsonNode authorNode = root.path("results").get(0);
                 System.out.println(authorNode);
+                authorRepository.save(new Author());
 
                 if (authorNode.isMissingNode()) {
                     return Optional.empty();
@@ -49,9 +50,8 @@ public class AuthorService {
         //String json = response.body();
         return Optional.empty();
     }
-    public void listSearchedAuthors () {
-        List<Author> authors = authorRepository.findAll();
-        authors.forEach(author -> System.out.println(author.getName() + " - " + author.getBirthYear() + " - " + author.getDeathYear()));
+    public List<AuthorData> listSearchedAuthors () {
+        return authorRepository.findAll().stream().map(AuthorData::new).toList();
     }
 
     public void listAliveAuthors() {
@@ -63,6 +63,7 @@ public class AuthorService {
                 .forEach(System.out::println);
     }
 }
+
 
 
 

@@ -21,11 +21,11 @@ public class Author {
     public Author(){
     }
 
-    public Author(String name, int birthYear, int deathYear ){
-        this.name = name;
-        this.birthYear = birthYear;
-        this.deathYear = deathYear;
-        this.books = books;
+
+    public Author(AuthorData data){
+        this.name = data.name();
+        this.birthYear = data.birthYear();
+        this.deathYear = data.deathYear();
     }
 
 

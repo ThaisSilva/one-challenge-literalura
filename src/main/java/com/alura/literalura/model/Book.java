@@ -28,33 +28,34 @@ public class Book {
     public Book(){
     }
 
-    public Book(BookData data, Author author){
+    public Book(BookData data){
         this.title = data.title();
-        this.author = author;
-        this.language = Languages.fromString(data.language().get(0));
+        this.author = data.author();
+        this.language = data.language();
+        // this.language = Languages.fromString(data.language().get(0));
         this.downloads = data.downloads();
     }
 
-    public Book(List<BookData> results) {
-        for (BookData data : results) {
-            Author author = new Author(data.authors()
-                    .get(0).name(), data.authors()
-                    .get(0).birthYear(), data.authors()
-                    .get(0).deathYear());
-            Book book = new Book(data, author);
-            author.getBooks().add(book);
-        }
-    }
-    public Book(String title, List<String> language, Double downloads,  List<AuthorData> authors) {
-        this.title = title;
-        this.language = Languages.fromString(language.get(0));
-        this.downloads = downloads;
-        Author author = new Author(authors.get(0)
-                .name(), authors.get(0)
-                .birthYear(), authors.get(0)
-                .deathYear());
-        this.author = author;
-    }
+//    public Book(List<BookData> results) {
+//        for (BookData data : results) {
+//            Author author = new Author(data.authors()
+//                    .get(0).name(), data.authors()
+//                    .get(0).birthYear(), data.authors()
+//                    .get(0).deathYear());
+//            Book book = new Book(data, author);
+//            author.getBooks().add(book);
+//        }
+//    }
+//    public Book(String title, List<String> language, Double downloads,  List<AuthorData> authors) {
+//        this.title = title;
+//        this.language = Languages.fromString(language.get(0));
+//        this.downloads = downloads;
+//        Author author = new Author(authors.get(0)
+//                .name(), authors.get(0)
+//                .birthYear(), authors.get(0)
+//                .deathYear());
+//        this.author = author;
+//    }
 
 
 
