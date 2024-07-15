@@ -1,5 +1,5 @@
 # :book: Desafio literalura
-Desafio para praticar Spring Boot do curso Java e Spring Framework T6 -ONE
+Desafio para colocar em prática os assuntos aprendidos no Programa ONE -T6, como consumo de APIs. 
 
 O desafio consistiu em desenvolver um catálogo de livros, com um menu de 6 opções, das quais: Buscas livros; buscar autores; listar livros; listar autores; listar autores vivos, listar livros em um idioma específico e sair;
 - No projeto são feitas requisições a API de livros gutendex, manipulando dados JSON e os armazenando em um banco de dados no PostgreSQL.
