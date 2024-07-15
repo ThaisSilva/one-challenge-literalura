@@ -7,6 +7,7 @@ O desafio consistiu em desenvolver um catálogo de livros, com um menu de 6 opç
 
 ## :hammer: Tecnologias utilizadas:
 - Java 17
+- Spring Boot 3
 - Maven
 - PostgreSQL
 - Hibernate
